@@ -31,8 +31,8 @@ var numDBRecords;
 var sendReport = 0;
 
 function loadPage() {
-    $.mobile.loadPage('https://raw.github.com/danieljamesbertrand/js/master/gasfrac.html',{pageContainer: $('#container')});
-$('#container").trigger('pagecreate');
+//$.mobile.loadPage('https://raw.github.com/danieljamesbertrand/js/master/gasfrac.html',{pageContainer: $('#container')});
+//$('#container").trigger('pagecreate');
 }
 
 function getMac() {
@@ -595,7 +595,7 @@ function init() {
 }
 
 function onLoad() {
-loadPage();
+//loadPage();
 getMac();
 // This dynamically loads the html portion 
 loadServerToTalkTo();
