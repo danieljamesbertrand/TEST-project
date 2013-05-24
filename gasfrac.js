@@ -33,10 +33,6 @@ var sendReport = 0;
 function loadPage() {
 $.mobile.loadPage('https://raw.github.com/danieljamesbertrand/js/master/gf-p1.html',{pageContainer: $('#container')});
 $('#container").trigger('pagecreate');
-$.mobile.loadPage('https://raw.github.com/danieljamesbertrand/js/master/gf-p2.html',{pageContainer: $('#container')});
-$('#container").trigger('pagecreate');
-$.mobile.loadPage('https://raw.github.com/danieljamesbertrand/js/master/gf-p3.html',{pageContainer: $('#container')});
-$('#container").trigger('pagecreate');
 
 }
 
