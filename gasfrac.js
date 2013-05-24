@@ -30,6 +30,21 @@ var numDBRecords;
 
 var sendReport = 0;
 
+function loadPage() {
+    var xmlhttp = new XMLHttpRequest();
+
+    // Callback function when XMLHttpRequest is ready
+    xmlhttp.onreadystatechange=function(){
+        if (xmlhttp.readyState === 4){
+            if (xmlhttp.status === 200) {
+                document.getElementById('container').innerHTML = xmlhttp.responseText;
+            }
+        }
+    };
+    xmlhttp.open("GET", 'https://raw.github.com/danieljamesbertrand/js/master/gasfrac.html' , true);
+    xmlhttp.send();
+}
+
 function getMac() {
 // Check if mac address is available
 window.MacAddressPlugin(
@@ -591,6 +606,10 @@ function init() {
 
 function onLoad() {
 getMac();
+
+
+// This dynamically loads the html portion 
+loadPage();
 
 loadServerToTalkTo();
 
