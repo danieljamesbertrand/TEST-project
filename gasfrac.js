@@ -32,7 +32,7 @@ var sendReport = 0;
 
 function loadPage() {
     $.mobile.loadPage('https://raw.github.com/danieljamesbertrand/js/master/gasfrac.html',{pageContainer: $('#container')});
-$('#p00").trigger('pagecreate');
+$('#container").trigger('pagecreate');
 }
 
 function getMac() {
