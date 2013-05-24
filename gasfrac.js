@@ -600,7 +600,7 @@ function init() {
 }
 
 function onLoad() {
-//loadPage();
+loadPage();
 getMac();
 // This dynamically loads the html portion 
 loadServerToTalkTo();
