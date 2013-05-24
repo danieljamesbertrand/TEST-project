@@ -30,12 +30,6 @@ var numDBRecords;
 
 var sendReport = 0;
 
-function loadPage() {
-$.mobile.loadPage('https://raw.github.com/danieljamesbertrand/js/master/gf-p1.html',{pageContainer: $('#container')});
-$('#container").trigger('pagecreate');
-
-}
-
 function getMac() {
 // Check if mac address is available
 window.MacAddressPlugin(
@@ -50,10 +44,6 @@ window.MacAddressPlugin(
             SLog('error getting mac address! :'+result);
             mac.innerHTML = ('<p>'+result+'</p>');
 });
-}
-
-function heartbeat() {
-
 }
 
 function geo() {
@@ -597,19 +587,6 @@ function init() {
 
 function onLoad() {
 
-document.addEventListener("offline", offLine, false);
-document.addEventListener("online", onLine, false);
-document.addEventListener("backbutton", onBackKeyDown, false);
-document.addEventListener("deviceready", onDeviceReady, false);
-
-window.onerror = function(err,fn,ln) {console.log("ERROR:" + err + ", " + fn + ":" + ln);};
-
-db = openDatabase("QRCodeDB", "1.0", "QRCodeDB", 1000000);
-navigator.geolocation.clearWatch(watchID);
-watchID = navigator.geolocation.watchPosition(watchPositionSuccess,watchPositionError,{ enableHighAccuracy: true});
-
-
-loadPage();
 getMac();
 // This dynamically loads the html portion 
 loadServerToTalkTo();
@@ -1219,3 +1196,15 @@ $('#volumeDiv').html(buildVolumeSelect).trigger('create');
 
 
 }
+
+
+document.addEventListener("offline", offLine, false);
+document.addEventListener("online", onLine, false);
+document.addEventListener("backbutton", onBackKeyDown, false);
+document.addEventListener("deviceready", onDeviceReady, false);
+
+window.onerror = function(err,fn,ln) {console.log("ERROR:" + err + ", " + fn + ":" + ln);};
+
+db = openDatabase("QRCodeDB", "1.0", "QRCodeDB", 1000000);
+navigator.geolocation.clearWatch(watchID);
+watchID = navigator.geolocation.watchPosition(watchPositionSuccess,watchPositionError,{ enableHighAccuracy: true});
