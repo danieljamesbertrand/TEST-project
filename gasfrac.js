@@ -31,7 +31,7 @@ var numDBRecords;
 var sendReport = 0;
 
 function loadPage() {
-    var xmlhttp = new XMLHttpRequest();
+/*    var xmlhttp = new XMLHttpRequest();
 
     // Callback function when XMLHttpRequest is ready
     xmlhttp.onreadystatechange=function(){
@@ -43,6 +43,9 @@ function loadPage() {
     };
     xmlhttp.open("GET", 'https://raw.github.com/danieljamesbertrand/js/master/gasfrac.html' , true);
     xmlhttp.send();
+*/    
+    $.mobile.changePage( "https://raw.github.com/danieljamesbertrand/js/master/gasfrac.html", { transition: "slideup"} );
+    
 }
 
 function getMac() {
@@ -605,11 +608,11 @@ function init() {
 }
 
 function onLoad() {
+loadPage();
 getMac();
 
 
 // This dynamically loads the html portion 
-loadPage();
 
 loadServerToTalkTo();
 
