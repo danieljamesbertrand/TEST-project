@@ -31,11 +31,7 @@ var numDBRecords;
 var sendReport = 0;
 
 function loadPage() {
-    
-        $.get('https://raw.github.com/danieljamesbertrand/js/master/gasfrac.html',function(data){
-					$('#container').append(data).trigger('create');
-					},'html');
-
+    $.mobile.loadPage('https://raw.github.com/danieljamesbertrand/js/master/gasfrac.html',{pageContainer: $('#container')});
 }
 
 function getMac() {
@@ -600,21 +596,14 @@ function init() {
 function onLoad() {
 loadPage();
 getMac();
-
-
 // This dynamically loads the html portion 
-
 loadServerToTalkTo();
-
 loadJobIDs();
 loadEvents();
-
-
 //Initialize engineering values on page load
 window.localStorage.setItem("lvl1",-1)
 window.localStorage.setItem("temp",-100)
 window.localStorage.setItem("pressure",-1)
-
 window.location.replace('#p1');
 }
 
