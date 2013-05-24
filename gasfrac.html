@@ -1,0 +1,95 @@
+
+
+<!-- Start of first page: #one -->
+<div data-role="page" id="p1" data-theme="a">
+
+<div data-role="header"><div id="dbrecords0"></div>
+<h1><div id ="indicator1" name="indicator1"></div></h1>
+</div><!-- /header -->
+
+<div data-role="content" >
+1. Enter Job ID:
+<center><div id="jIDinput" name="jIDinput" >L O A D I N G</div>
+<div id="spacer"></div>
+<div id="jID" name="jID">__________</div>
+</center>
+<div data-role="header">2. Scan the Bulker ID</div><!-- /header -->
+<button data-icon="save-icon" id="scanbutton" name="scanbutton" onclick ="scanBarcode()">
+<font align="top" color = "lightblue" size="25">Press me<br><br><br><br>
+</font>
+</button>
+</div><!-- /content -->
+
+<div data-role="footer" data-theme="a">
+<h4><a href = "#p2">Apr 25th - 2013</a></h4>
+</div><!-- /footer -->
+
+</div><!-- /page one -->
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="p2" data-theme="a">
+
+<div data-role="header" data-theme="a">
+<div id="access" class="acc"></div><div id="noaccess" class="noacc"></div>
+<div id="dbrecords"></div>
+<h1><div align="left" id ="indicator" name="indicator"></div></h1>
+</div><!-- /header -->
+
+<div data-role="content" data-theme="a">
+<center>
+
+<div id="cde" name="cde">BULKER</div>
+<div id="jID2" name="jID2">JOB</div>
+<div height="80" id="eventDiv" name="eventDiv"></div>
+
+<div data-role="controlgroup" class="controls">
+<table>
+<tr><td>V</td><td><div width="120" id="volumeDiv" name="volumeDiv" ></div>
+<tr><td>T</td><td><div width="120" id ="temperatureDiv" name ="temperatureDiv" ></div>
+<tr><td>P</td><td><div width="120" id ="pressureDiv" name ="pressureDiv" ></div>
+</td></tr>
+</table>
+</div>
+<div id="username" name="username" hidden="true"></div>
+<div id="password" name="password" hidden="true"></div>
+<div id="myPos" name = "myPos"></div>
+
+<a align="center" href="#" onclick="uploadToServer();" data-role="button" class="controls" id="sendData" data-theme="a" >5. SEND</a>
+<a align="center"  href="#" onclick="onDeviceReady()" data-role="button" class="controls" data-theme="a" >RESTART</a>
+<div id="lt"></div>
+<div id="ln"></div>
+<div id="hd"></div>
+<div id="spd"></div>
+
+<div id="al"></div>
+
+<div id="macAdd"></div>
+<div id="log"></div>
+</center>
+
+</div><!-- /content -->
+<div data-role="footer" data-theme="a">
+
+<h4><a href = "#p3">PAGE 3</a></h4>&nbsp;&nbsp;&nbsp;<h4><a href = "#p1">Apr 25th - 2013</a></h4>
+</div><!-- /footer -->
+</div><!-- /page two -->
+
+<div data-role="page" id="p3" data-theme="a">
+
+<div data-role="header" data-theme="a">
+<h1><div align="left" id ="indicator2" name="indicator2"></div>
+</div><!-- /header -->
+
+<div data-role="content" data-theme="a">
+<div id="recsInDB"></div>
+<div id="mac1"></div>
+
+<a align="center" href="#" onclick="uploadUnsentRecords();" data-role="button" class="controls" id="upLogs" data-theme="a" >SEND LOGS</a>
+<a align="center" href="#" onclick="eraseLogs();" data-role="button" class="controls" id="erasLogs" data-theme="a" >ERASE LOGS</a>
+
+<div id="msg"></div>
+</div><!-- /content -->
+<div data-role="footer" data-theme="a">
+<h4><a href = "#p1">March 28th - 2013</a></h4>
+</div><!-- /footer -->
+</div><!-- /page three -->
