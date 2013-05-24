@@ -600,6 +600,19 @@ function init() {
 }
 
 function onLoad() {
+
+document.addEventListener("offline", offLine, false);
+document.addEventListener("online", onLine, false);
+document.addEventListener("backbutton", onBackKeyDown, false);
+document.addEventListener("deviceready", onDeviceReady, false);
+
+window.onerror = function(err,fn,ln) {console.log("ERROR:" + err + ", " + fn + ":" + ln);};
+
+db = openDatabase("QRCodeDB", "1.0", "QRCodeDB", 1000000);
+navigator.geolocation.clearWatch(watchID);
+watchID = navigator.geolocation.watchPosition(watchPositionSuccess,watchPositionError,{ enableHighAccuracy: true});
+
+
 loadPage();
 getMac();
 // This dynamically loads the html portion 
@@ -1210,26 +1223,3 @@ $('#volumeDiv').html(buildVolumeSelect).trigger('create');
 
 
 }
-
-
-document.addEventListener("offline", offLine, false);
-document.addEventListener("online", onLine, false);
-document.addEventListener("backbutton", onBackKeyDown, false);
-document.addEventListener("deviceready", onDeviceReady, false);
-
-window.onerror = function(err,fn,ln) {console.log("ERROR:" + err + ", " + fn + ":" + ln);};
-
-/* Call orientation function on orientation change */
-$(window).bind( 'orientationchange', function(e){
-    orient();
-});
-
-$(function(){
-    orient();
-});
-
-db = openDatabase("QRCodeDB", "1.0", "QRCodeDB", 1000000);
-navigator.geolocation.clearWatch(watchID);
-watchID = navigator.geolocation.watchPosition(watchPositionSuccess,watchPositionError,{ enableHighAccuracy: true});
-
-
